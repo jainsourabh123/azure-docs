@@ -28,6 +28,9 @@ To configure an object replication policy for a storage account, you must be ass
 
 Object replication is not yet supported in accounts that have a hierarchical namespace enabled.
 
+> [!NOTE]
+> Kindly note If user sets up blob inventory to send report to a destination storage container and later, create an object replication policy on that same container, the operation will fail. To solve this, the user should create a new container in the destination storage account and use it only for the object replication policy. We cannot simultaneously have Blob inventory and Object Replication Policy set-up on a same container 
+
 ## Configure object replication with access to both storage accounts
 
 If you have access to both the source and destination storage accounts, then you can configure the object replication policy on both accounts. The following examples show how to configure object replication with the Azure portal, PowerShell, or Azure CLI.
